@@ -3,4 +3,5 @@
                       '("c" "")))
 
 (create-solarized-theme solarized
-                        solarized-description (solarized-color-definitions))
+                        solarized-description (solarized-color-definitions)
+                        (solarized-variable-definitions))

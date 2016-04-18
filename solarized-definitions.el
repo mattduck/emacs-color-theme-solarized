@@ -229,13 +229,13 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
       (mapcar (lambda (face) (apply 'create-face-spec face))
               `(;; basic
                 (default (,@fg-base0 ,@bg-back))   ; Normal
-                (cursor (,@fg-base03 ,@bg-base0))  ; Cursor
+                (cursor (,@fg-base03 ,@bg-base1))  ; Cursor
                 (shadow (,@fg-base01))
                 (link (,@fmt-undr ,@fg-violet))    ; Underlined
                 (link-visited (,@fmt-undr ,@fg-magenta))
                 (match (,@fmt-revr ,@fg-yellow))   ; Search
                 (error (,@fmt-revr ,@fg-red))      ; ErrorMsg
-                (warning (,@fmt-bold ,@fg-red))    ; WarningMsg
+                (warning (,@fg-red))    ; WarningMsg
                 (success (,@fg-blue))              ; MoreMsg
                 (escape-glyph-face (,@fg-red))
                 (fringe (,@fg-base01 ,@bg-base02))
@@ -248,10 +248,6 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (lazy-highlight (:inherit match)) ; Search
                 (menu (,@fg-base0 ,@bg-base02))
                 (minibuffer-prompt (,@fmt-bold ,@fg-cyan)) ; Question
-                (mode-line ; StatusLine
-                 (,@fg-base1 ,@bg-base02 ,@fmt-revbb :box nil))
-                (mode-line-inactive    ; StatusLineNC
-                 (,@fg-base00 ,@bg-base02 ,@fmt-revbb :box nil))
                 (region (,@fg-base01 ,@bg-base03 ,@fmt-revbb)) ; Visual
                 (secondary-selection (,@bg-base02))
                 (shadow (,@fg-base01))
@@ -361,10 +357,10 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (info-xref (:inherit link))
                 (info-xref-visited (:inherit link-visited))
                 ;; org
-                (org-block-background (,@bg-base02))
+                (org-block-background (,@bg-base03))
                 (org-hide (,@fg-base03))
-                (org-todo (,@fmt-bold ,@fg-base03 ,@bg-red))
-                (org-done (,@fmt-bold ,@fg-green))
+                (org-todo (,@fmt-bold ,@fg-orange ,@bg-base02))
+                (org-done (,@fmt-bold ,@fg-green ,@bg-base02))
                 (org-todo-kwd-face (,@fmt-bold ,@fg-base03 ,@bg-red))
                 (org-done-kwd-face (,@fmt-bold ,@fg-green))
                 (org-project-kwd-face (,@fg-violet ,@bg-base03))
@@ -382,39 +378,39 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (org-level-6 (:inherit outline-6))
                 (org-level-7 (:inherit outline-7))
                 (org-level-8 (:inherit outline-8))
-                (org-special-keyword (,@fmt-ital ,@fg-base01))
+                (org-special-keyword (,@fg-green ,@bg-base02))
                 (org-drawer (,@fmt-bold ,@fg-blue))
                 (org-column (,@fmt-revr ,@fg-cyan))
                 (org-column-title (,@fmt-bold ,@fmt-revr))
-                (org-warning (,@fmt-bold ,@fg-red))
+                (org-warning (,@fg-orange))
                 (org-archived (,@fg-base01))
                 (org-link (,@fmt-undr ,@fg-violet))
                 (org-footnote (,@fmt-undr ,@fg-violet))
                 (org-ellipses (,@fg-yellow :strike-through t) )
                 (org-target (,@fmt-undr))
-                (org-date (,@fmt-undr ,@fg-violet))
+                (org-date (,@fmt-undr ,@fg-blue))
                 (org-date-selected (,@fmt-revr ,@fg-red))
-                (org-sexp-date (,@fmt-undr ,@fg-violet))
-                (org-tag (,@fmt-bold))
-                (org-list-dt (,@fmt-bold))
+                (org-sexp-date (,@fmt-undr ,@fg-cyan))
+                (org-tag (,@fmt-bold ,@fg-yellow ,@bg-base02))
+                (org-list-dt (,@fg-green))
                 (org-agenda-done (,@fg-green))
                 (org-headline-done (,@fg-base01))
                 (org-priority (,@fmt-ital ,@fg-base01))
-                (org-checkbox (,@fmt-bold))
-                (org-table (,@fg-cyan))
+                (org-checkbox (,@fmt-bold ,@fg-yellow))
+                (org-table (,@fg-base01))
                 (org-formula (:weight bold :slant italic ,@fg-red))
-                (org-code (,@fg-base01))
+                (org-code (,@fg-green))
                 (org-document-title (,@fmt-bold ,@fg-cyan))
                 (org-document-info-keyword (,@fg-base01))
                 (org-block (,@fg-base01))
-                (org-verbatim (,@fmt-undr ,@fg-base01))
-                (org-clock-overlay (,@fmt-revr ,@bg-cyan ,@fg-base03))
-                (org-agenda-structure (,@fmt-bold ,@fg-blue))
-                (org-scheduled (:weight bold :slant italic ,@fg-green))
-                (org-scheduled-today (:weight bold :slant italic ,@fg-green))
+                (org-verbatim (,@fg-cyan))
+                (org-clock-overlay (,@bg-base2))
+                (org-agenda-structure (,@fg-violet))
+                (org-scheduled (,@fg-cyan))
+                (org-scheduled-today (:weight bold :slant italic ,@fg-orange))
                 (org-agenda-dimmed-todo-face (,@fg-base00))
-                (org-scheduled-previously (,@fmt-bold ,@fg-red))
-                (org-upcoming-deadline (,@fmt-bold ,@fg-red))
+                (org-scheduled-previously (,@fg-cyan))
+                (org-upcoming-deadline (,@fmt-bldi ,@fg-red))
                 (org-agenda-restriction-lock (,@fmt-revr ,@fg-base03 ,@bg-cyan))
                 (org-time-grid (,@fg-yellow))
                 (org-latex-and-related(,@fg-orange))
@@ -422,16 +418,16 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (table-cell (,@fmt-none ,@fg-base0 ,@bg-back))
                 ;; outline - pandocBlockQuoteLeader[1–6]
                 (outline-1 (,@fg-blue))
-                (outline-2 (,@fg-cyan))
-                (outline-3 (,@fg-yellow))
-                (outline-4 (,@fg-red))
-                (outline-5 (,@fg-base0))
-                (outline-6 (,@fg-base01))
-                (outline-7 (,@fg-orange))
-                (outline-8 (,@fg-violet))
+                (outline-2 (,@fg-yellow))
+                (outline-3 (,@fg-violet))
+                (outline-4 (,@fg-cyan))
+                (outline-5 (,@fg-blue))
+                (outline-6 (,@fg-yellow))
+                (outline-7 (,@fg-violet))
+                (outline-8 (,@fg-cyan))
                 ;; show-paren - MatchParen
-                (show-paren-match (,@fmt-bold ,@fg-cyan ,@bg-base02))
-                (show-paren-mismatch (,@fmt-bold ,@fg-red ,@bg-base01))
+                (show-paren-match (,@fg-magenta :underline t))
+                (show-paren-mismatch (,@fmt-bold ,@bg-magenta ,@fg-base03 :underline t :slant italic))
                 ;; speedbar
                 ;; (speedbar-button-face (,@fmt-none ,@fg-base1))
                 (speedbar-button-face
@@ -602,7 +598,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (helm-grep-lineno (,@fg-orange))
                 (helm-grep-match (:inherit helm-match))
                 (helm-grep-running (,@fg-red))
-                (helm-helper (:inherit helm-header))
+                (helm-source-header (:inherit header-line))
+                (helm-helper (:background yellow :foreground base3))
+                (helm-header (:background base02 :foreground cyan))
                 (helm-history-deleted (:inherit helm-ff-invalid-symlink))
                 (helm-history-remote (,@fg-red))
                 (helm-lisp-completion-info (,@fg-base0))
@@ -615,13 +613,12 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (helm-ls-git-modified-not-staged-face (,@fmt-ital ,@fg-base01))
                 (helm-ls-git-renamed-modified-face (,@fg-green))
                 (helm-ls-git-untracked-face (,@fg-red))
-                (helm-M-x-key (,@fmt-none ,@fg-orange))
-                (helm-match (:inherit match))
+                (helm-M-x-key (,@fmt-none ,@fg-red))
+                (helm-match (:foreground base3 :underline t))
                 (helm-moccur-buffer (,@fmt-undr ,@fg-cyan))
-                (helm-selection (:inherit region))
+                (helm-selection (:background base02))
                 (helm-selection-line (:inherit secondary-selection))
                 (helm-separator (,@fg-red))
-                (helm-source-header (:inherit helm-header))
                 (helm-time-zone-current (,@fg-green))
                 (helm-time-zone-home (,@fg-red))
                 (helm-visible-mark (,@fmt-bold ,@bg-back ,@fg-magenta))
@@ -777,18 +774,155 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (undo-tree-visualizer-unmodified-face (,@fg-cyan))
                 (undo-tree-visualizer-register-face (,@fg-yellow))
                 ;; haskell
-                (haskell-keyword-face (,@fg-cyan)))))))
+                (haskell-keyword-face (,@fg-cyan))
+
+                ;; Matt - misc
+                (italic (,@fmt-ital ,@fg-base1))
+                (bold (,@fmt-bold ,@fg-base2))
+                (org-agenda-date (,@fg-blue))
+                (org-agenda-date-today (,@fmt-bldi ,@fg-blue))
+                (org-block-begin-line (,@fg-green :overline t))
+                (org-block-end-line (:inherit org-block-begin-line :overline nil
+                                              :underline t))
+
+                ;; SML
+                (sml/filename (,@fg-base1 :weight bold))
+                (sml/folder (,@fg-base01))
+                (sml/prefix (:foreground unspecified))
+                (sml/git (:foreground unspecified))
+                (sml/process (:weight bold))
+                (sml/sudo (,@fg-orange :weight bold))
+                (sml/read-only (,@fg-cyan))
+                (sml/outside-modified (,@fg-cyan))
+                (sml/modified (,@fg-cyan))
+                (sml/vc (,@fg-cyan))
+                (sml/vc-edited (,@fg-yellow))
+                (sml/charging (,@fg-base1))
+                (sml/discharging (,@fg-base1 :weight bold))
+                (sml/modes (,@fg-cyan))
+
+                (mode-line
+                 (,@fg-base1 ,@bg-base02
+                             :inverse-video nil
+                             :box (:line-width 1 :color base02 :style released-button)
+                             :underline nil
+                             ))
+                (mode-line-inactive
+                 (,@fg-base02 ,@bg-base02
+                              :inverse-video nil
+                              :box (:line-width -1 :color base01 :style nil)
+                              :underline nil
+                              ))
+
+                (mode-line-buffer-id (,@fg-magenta))  ; Not sure what this done
+
+                (fic-face (:inherit font-lock-comment-face ,@fg-base2 ,@bg-base02))
+                (fic-author-face (:inherit fic-face)))))))
+
+
+(defun solarized-load-theme ()
+  (interactive)
+  (load-theme 'solarized t)  ; Reloads variables
+  (font-lock-fontify-buffer))
+
+(defun solarized-get-definition (color-name)
+  "Translate given colour name into a value from solarized-colors."
+  (when (eq 'light (frame-parameter nil 'background-mode))
+    (setq color-name
+          (cl-case color-name
+            (base03 'base3)
+            (base02 'base2)
+            (base01 'base1)
+            (base00 'base0)
+            (base0 'base00)
+            (base1 'base01)
+            (base2 'base02)
+            (base3 'base03)
+            (otherwise color-name))))
+  (nth (cond (solarized-degrade     3)
+             (solarized-broken-srgb 2)
+             (t                     1))
+       (assoc color-name solarized-colors)))
+
+(defun solarized-variable-definitions ()
+  (list
+
+   '(org-priority-faces 
+     `((?A . (:foreground ,(solarized-get-definition 'red) :background ,(solarized-get-definition 'base02)))
+       (?B . (:foreground ,(solarized-get-definition 'base01) :background ,(solarized-get-definition 'base02)))))
+
+     '(org-todo-keyword-faces
+       `(("NOW" . (:foreground ,(solarized-get-definition 'orange)
+                               :background ,(solarized-get-definition 'base02)))
+         ("BLOCKED" . (:foreground ,(solarized-get-definition 'magenta)
+                                   :background ,(solarized-get-definition 'base02)))
+         ("HOLD" . (:foreground ,(solarized-get-definition 'base01)
+                                :background ,(solarized-get-definition 'base02)))
+         ("DONE" . (:foreground ,(solarized-get-definition 'base01)
+                                :background ,(solarized-get-definition 'base02)))
+         ("DROPPED" . (:foreground ,(solarized-get-definition 'base01)
+                                   :background ,(solarized-get-definition 'base02)))
+         ("A_OPEN" . (:foreground ,(solarized-get-definition 'blue)
+                                  :background ,(solarized-get-definition 'base02)))
+         ("A_CLOSED" . (:foreground ,(solarized-get-definition 'base01)
+                                    :background ,(solarized-get-definition 'base02)))))
+
+    '(fci-rule-color (solarized-get-definition 'base02))
+
+    '(evil-emacs-state-cursor (list (solarized-get-definition 'cyan) 'box))
+
+    '(evil-default-cursor t)
+
+    '(evil-normal-state-cursor (list (solarized-get-definition 'base1) 'box))
+    '(evil-visual-state-cursor (list (solarized-get-definition 'base1) 'box))
+    '(evil-motion-state-cursor (list (solarized-get-definition 'base1) 'box))
+
+    '(evil-insert-state-cursor (list (solarized-get-definition 'base1) '(bar . 2)))
+    '(evil-replace-state-cursor (list (solarized-get-definition 'red) '(hbar . 2)))
+    '(evil-operator-state-cursor (list (solarized-get-definition 'violet) 'box))))
+
+(defvar solarized--comment-hidden-p nil)
+(defun solarized-toggle-comment-visibility ()
+  "Toggle the font-comment-lock-face between a more-visible format and a
+less-visible format"
+  (interactive)
+  (if solarized--comment-hidden-p
+      (progn
+        (set-face-attribute 'font-lock-comment-face nil
+                            :foreground (solarized-get-definition 'base01))  ; visible
+        (setq solarized--comment-hidden-p nil))
+    (set-face-attribute 'font-lock-comment-face nil
+                        :foreground (solarized-get-definition 'base02))  ; less visible
+    (setq solarized--comment-hidden-p t))
+  (font-lock-fontify-buffer))
+
+(defun solarized-enable-theme (mode)
+  (interactive "Slight or dark? ")
+  (set-frame-parameter nil 'background-mode mode)
+  (enable-theme 'solarized)
+  (font-lock-fontify-buffer))
+
+(defun solarized-toggle-theme-mode ()
+  (interactive)
+  (if (eq 'dark (frame-parameter nil 'background-mode))
+      (progn
+        (solarized-enable-theme 'light))
+    (solarized-enable-theme 'dark)))
 
 ;;;###autoload
 (when (boundp 'custom-theme-load-path)
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(defmacro create-solarized-theme (name description color-definitions)
+(defmacro create-solarized-theme (name description color-definitions variable-definitions)
   `(progn
      (deftheme ,name ,description)
      (apply 'custom-theme-set-faces
             ',name ,color-definitions)
+     (apply 'custom-theme-set-variables
+            ',name ,variable-definitions)
+
      (provide-theme ',name)))
 
 (provide 'solarized-definitions)
+;;; solarized-definitions.el ends here

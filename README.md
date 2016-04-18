@@ -1,3 +1,9 @@
+**This is my own fork of sellout/emacs-color-theme-solarized**, edited to suit my
+preferences. The changes are not well-documented.
+
+------------------------------------------------------------------------------
+
+
 [![Stories in Ready](https://badge.waffle.io/sellout/emacs-color-theme-solarized.png?label=ready&title=Ready)](https://waffle.io/sellout/emacs-color-theme-solarized)
 Solarized Colorscheme for Emacs
 ===============================
