@@ -896,10 +896,23 @@ less-visible format"
     (setq solarized--comment-hidden-p t))
   (font-lock-fontify-buffer))
 
+(defun solarized-load-theme ()
+  (interactive)
+  (let ((dark-mode-p (eq 'dark (frame-parameter nil 'background-mode))))
+    (load-theme 'solarized t)  ; Reloads variables
+    (if dark-mode-p
+        (solarized-enable-theme 'dark))
+    (if (fboundp 'powerline-reset)
+        (powerline-reset))
+    (font-lock-fontify-buffer)))
+
 (defun solarized-enable-theme (mode)
   (interactive "Slight or dark? ")
   (set-frame-parameter nil 'background-mode mode)
   (enable-theme 'solarized)
+  ;; Reset powerline separator cache
+  (if (fboundp 'powerline-reset)
+      (powerline-reset))
   (font-lock-fontify-buffer))
 
 (defun solarized-toggle-theme-mode ()
