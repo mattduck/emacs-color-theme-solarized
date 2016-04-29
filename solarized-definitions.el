@@ -217,6 +217,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
           (fmt-curl-yellow `(                        :underline (:color "#b58900" :style wave)))
           (fmt-curl-magenta `(                       :underline (:color "#d33682" :style wave)))
           (fmt-curl-cyan `(                          :underline (:color "#2aa198" :style wave)))
+          (fmt-curl-orange `(                          :underline (:color "#cb4b16" :style wave)))
+          (fmt-curl-violet `(                          :underline (:color "#6c71c4" :style wave)))
+          (fmt-curl-green `(                          :underline (:color "#859900" :style wave)))
           (fmt-ital   `(              :slant ,italic))
           ;; FIXME: not quite the same
           (fmt-stnd   `(                                                   :inverse-video t))
@@ -234,9 +237,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (link (,@fmt-undr ,@fg-violet))    ; Underlined
                 (link-visited (,@fmt-undr ,@fg-magenta))
                 (match (,@fmt-revr ,@fg-yellow))   ; Search
-                (error (,@fmt-revr ,@fg-red))      ; ErrorMsg
-                (warning (,@fg-red))    ; WarningMsg
-                (success (,@fg-blue))              ; MoreMsg
+                (error (,@fg-red))      ; ErrorMsg
+                (warning (,@fg-violet))    ; WarningMsg
+                (success (,@fg-green))              ; MoreMsg
                 (escape-glyph-face (,@fg-red))
                 (fringe (,@fg-base01 ,@bg-base02))
                 (linum (,@fg-base01 ,@bg-base02))
@@ -670,11 +673,6 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (rainbow-delimiters-depth-7-face (:inherit outline-7))
                 (rainbow-delimiters-depth-8-face (:inherit outline-8))
                 (rainbow-delimiters-depth-9-face (,@fg-green))
-                ;; powerline
-                (powerline-active1 (,@fg-base00 :inherit mode-line))
-                (powerline-active2 (,@fg-base0 :inherit mode-line))
-                (powerline-inactive1 (,@fg-base02 ,@bg-base1 :inherit mode-line-inactive))
-                (powerline-inactive2 (,@fg-base01 :inherit mode-line-inactive))
                 ;; slime
                 (slime-error-face (,@fmt-revr ,@fg-red)) ; ErrorMsg
                 (slime-note-face (,@fg-yellow))
@@ -716,7 +714,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (font-latex-warning-face (,@fg-red))
                 (font-latex-sectioning-5-face (,@fg-violet))
                 ;;flyspell
-                (flyspell-incorrect (,@fmt-curl-red)) ; SpellBad
+                (flyspell-incorrect (,@fmt-curl-orange)) ; SpellBad
                 (flyspell-duplicate (,@fmt-curl-yellow))
                 ;; rst-mode
                 (rst-level-1 (:inherit outline-1))
@@ -801,29 +799,43 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (sml/discharging (,@fg-base1 :weight bold))
                 (sml/modes (,@fg-cyan))
 
+                ;; flycheck
+                (flycheck-fringe-error (,@fg-orange ,@bg-base03))  ; These
+                                         ; control the bitmap colours in the fringe
+                (flycheck-fringe-warning (,@fg-violet ,@bg-base02))
+                (flycheck-fringe-success (,@fg-green))
+                (flycheck-error (,@fmt-curl-orange))
+                (flycheck-warning (,@fmt-curl-violet))
+                (flycheck-info (,@fmt-curl-green))
+
                 (mode-line
-                 (,@fg-base1 ,@bg-base02
+                 (,@fg-base0 ,@bg-base03
                              :inverse-video nil
                              :box (:line-width 1 :color base02 :style released-button)
                              :underline nil
                              ))
+                (powerline-active1 (,@fg-cyan ,@bg-base02 :inherit mode-line))
+                (powerline-active2 (,@fg-base1 ,@bg-base01 :inherit mode-line))
+
                 (mode-line-inactive
-                 (,@fg-base02 ,@bg-base02
+                 (,@fg-base02 ,@bg-base0
                               :inverse-video nil
                               :box (:line-width -1 :color base01 :style nil)
                               :underline nil
                               ))
+                (powerline-inactive1 (,@fg-base02 ,@bg-base0 :inherit mode-line-inactive))
+                (powerline-inactive2 (,@fg-base01 ,@bg-base0 :inherit mode-line-inactive))
 
-                (mode-line-buffer-id (,@fg-magenta))  ; Not sure what this done
+                (md/modeline-flycheck-error
+                 (,@fg-base2 ,@bg-orange))
+                (md/modeline-flycheck-warning
+                 (,@fg-base2 ,@bg-violet))
+
+                (mode-line-buffer-id (,@fg-magenta))  ; Not sure what this does
 
                 (fic-face (:inherit font-lock-comment-face ,@fg-base2 ,@bg-base02))
                 (fic-author-face (:inherit fic-face)))))))
 
-
-(defun solarized-load-theme ()
-  (interactive)
-  (load-theme 'solarized t)  ; Reloads variables
-  (font-lock-fontify-buffer))
 
 (defun solarized-get-definition (color-name)
   "Translate given colour name into a value from solarized-colors."
