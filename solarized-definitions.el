@@ -495,9 +495,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (jabber-roster-user-online (,@fmt-bold ,@fg-blue))
                 (jabber-roster-user-xa (,@fmt-ital ,@fg-magenta))
                 ;; git-gutter
-                (git-gutter:modified (,@fg-violet))
-                (git-gutter:added (,@fg-green))
-                (git-gutter:deleted (,@fg-red))
+                (git-gutter:modified (,@fg-blue ,@bg-base02))
+                (git-gutter:added (,@fg-green ,@bg-base02))
+                (git-gutter:deleted (,@fg-red ,@bg-base02))
                 ;; gnus - these are mostly taken from mutt, not VIM
                 (gnus-cite-1 (:inherit outline-1))
                 (gnus-cite-2 (:inherit outline-2))
