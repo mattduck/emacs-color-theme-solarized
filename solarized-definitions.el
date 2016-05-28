@@ -852,9 +852,12 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
             (base2 'base02)
             (base3 'base03)
             (otherwise color-name))))
-  (nth (cond (solarized-degrade     3)
-             (solarized-broken-srgb 2)
-             (t                     1))
+  (nth (cond
+        ((and (not (display-graphic-p)) (= solarized-termcolors 16)) 4)
+        ((and (not (display-graphic-p)) (not (= solarized-termcolors 16)) 3))
+        (solarized-degrade     3)
+        (solarized-broken-srgb 2)
+        (t                     1))
        (assoc color-name solarized-colors)))
 
 (defun solarized-variable-definitions ()
@@ -921,7 +924,7 @@ less-visible format"
 
 (defun solarized-enable-theme (mode)
   (interactive "Slight or dark? ")
-  (set-frame-parameter nil 'background-mode mode)
+  (solarized-set-frame-bg-mode mode)
   (enable-theme 'solarized)
   ;; Reset powerline separator cache
   (if (fboundp 'powerline-reset)
@@ -934,6 +937,12 @@ less-visible format"
       (progn
         (solarized-enable-theme 'light))
     (solarized-enable-theme 'dark)))
+
+(defun solarized-set-frame-bg-mode (mode)
+  ;; https://github.com/sellout/emacs-color-theme-solarized/issues/142
+  ;; To switch to light mode in terminal, you have to use set-terminal-parameter.
+  (set-frame-parameter nil 'background-mode mode)
+  (set-terminal-parameter nil 'background-mode mode))
 
 ;;;###autoload
 (when (boundp 'custom-theme-load-path)
