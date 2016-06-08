@@ -834,6 +834,8 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
 
                 (mode-line-buffer-id (,@fg-magenta))  ; Not sure what this does
 
+                (sh-quoted-exec (,@fg-orange))
+
                 (fic-face (:inherit font-lock-comment-face ,@fg-base2 ,@bg-base02))
                 (fic-author-face (:inherit fic-face)))))))
 
