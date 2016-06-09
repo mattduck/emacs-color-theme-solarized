@@ -905,6 +905,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
 
                 (sh-quoted-exec (,@fg-orange))
 
+                ;; help-fns+
+                (describe-variable-value (,@fg-cyan))
+
                 (fic-face (:inherit font-lock-comment-face ,@fg-base2 ,@bg-base02))
                 (fic-author-face (:inherit fic-face)))))))
 
