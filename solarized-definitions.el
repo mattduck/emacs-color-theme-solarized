@@ -498,6 +498,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (git-gutter:modified (,@fg-blue ,@bg-base02))
                 (git-gutter:added (,@fg-green ,@bg-base02))
                 (git-gutter:deleted (,@fg-red ,@bg-base02))
+                (git-gutter:unchanged (,@fg-base01 ,@bg-base02))
                 (git-gutter:separator (,@bg-base02))
                 ;; gnus - these are mostly taken from mutt, not VIM
                 (gnus-cite-1 (:inherit outline-1))
