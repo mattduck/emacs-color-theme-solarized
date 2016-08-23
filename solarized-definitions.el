@@ -887,6 +887,11 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                              ))
                 (powerline-active1 (,@fg-cyan ,@bg-base02 :inherit mode-line))
                 (powerline-active2 (,@fg-base1 ,@bg-base01 :inherit mode-line))
+                (md/powerline-normal (,@fg-base2 ,@bg-base01 :inherit mode-line))
+                (md/powerline-insert (,@fg-base2 ,@bg-yellow :inherit mode-line))
+                (md/powerline-visual (,@fg-base2 ,@bg-cyan :inherit mode-line))
+                (md/powerline-replace (,@fg-base2 ,@bg-orange :inherit mode-line))
+                (md/powerline-emacs (,@fg-base2 ,@bg-magenta :inherit mode-line))
 
                 (mode-line-inactive
                  (,@fg-base02 ,@bg-base0
@@ -896,6 +901,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                               ))
                 (powerline-inactive1 (,@fg-base02 ,@bg-base0 :inherit mode-line-inactive))
                 (powerline-inactive2 (,@fg-base01 ,@bg-base0 :inherit mode-line-inactive))
+                (md/powerline-inactive (,@fg-base01 ,@bg-base0 :inherit mode-line-inactive))
 
                 (md/modeline-flycheck-error
                  (,@fg-base2 ,@bg-orange))
