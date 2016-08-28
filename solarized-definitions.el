@@ -879,6 +879,20 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (flycheck-warning (,@fmt-curl-violet))
                 (flycheck-info (,@fmt-curl-green))
 
+                ;; elscreen
+                (elscreen-tab-background-face 
+                  (,@fg-base02 ,@bg-base0 
+                  :box (:line-width 1 :color base02 :style released-button)))
+                (elscreen-tab-control-face 
+                  (:inherit elscreen-tab-background-face
+                   ,@fg-base02 ,@bg-base0))
+                (elscreen-tab-current-screen-face 
+                  (:inherit elscreen-tab-background-face
+                    ,@fg-base03 ,@bg-base0))
+                (elscreen-tab-other-screen-face 
+                  (:inherit elscreen-tab-background-face))
+
+                ;; powerline
                 (mode-line
                  (,@fg-base0 ,@bg-base03
                              :inverse-video nil
