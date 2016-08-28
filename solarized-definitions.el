@@ -850,9 +850,8 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (bold (,@fmt-bold ,@fg-base2))
                 (org-agenda-date (,@fg-blue))
                 (org-agenda-date-today (,@fmt-bldi ,@fg-blue))
-                (org-block-begin-line (,@fg-green :overline t))
-                (org-block-end-line (:inherit org-block-begin-line :overline nil
-                                              :underline t))
+                (org-block-begin-line (,@fg-base01))
+                (org-block-end-line (,@fg-base01))
 
                 ;; SML
                 (sml/filename (,@fg-base1 :weight bold))
