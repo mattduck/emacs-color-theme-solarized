@@ -887,7 +887,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                    ,@fg-base02 ,@bg-base0))
                 (elscreen-tab-current-screen-face 
                   (:inherit elscreen-tab-background-face
-                    ,@fg-base03 ,@bg-base0))
+                    ,@fg-base03 ,@bg-blue))
                 (elscreen-tab-other-screen-face 
                   (:inherit elscreen-tab-background-face))
 
