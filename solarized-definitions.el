@@ -869,6 +869,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (sml/discharging (,@fg-base1 :weight bold))
                 (sml/modes (,@fg-cyan))
 
+                ;; ag-mode
+                (ag-match-face (:inherit helm-match))
+
                 ;; flycheck
                 (flycheck-fringe-error (,@fg-orange ,@bg-base03))  ; These
                                          ; control the bitmap colours in the fringe
