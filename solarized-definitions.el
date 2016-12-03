@@ -931,6 +931,20 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
 
                 (sh-quoted-exec (,@fg-orange))
 
+                ;; ediff
+                (ediff-current-diff-A (,@bg-base02 ,@fg-orange :weight bold))
+                (ediff-current-diff-B (,@bg-base02 ,@fg-yellow :weight bold))
+                (ediff-current-diff-C (,@bg-base02 ,@fg-cyan :weight bold))
+                (ediff-fine-diff-A (,@bg-base02 ,@fg-red :weight normal))
+                (ediff-fine-diff-B (,@bg-base02 ,@fg-green :weight normal))
+                (ediff-fine-diff-C (,@bg-base02 ,@fg-blue :weight normal))
+                (ediff-even-diff-A (,@bg-base01 ,@fg-base3))
+                (ediff-odd-diff-A (,@bg-base01 ,@fg-base03))
+                (ediff-even-diff-B (,@bg-base01 ,@fg-base03))
+                (ediff-odd-diff-B (,@bg-base01 ,@fg-base03))
+                (ediff-even-diff-C (,@bg-base01 ,@fg-base0))
+                (ediff-odd-diff-C (,@bg-base01 ,@fg-base03))
+                
                 ;; help-fns+
                 (describe-variable-value (,@fg-cyan))
 
