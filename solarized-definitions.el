@@ -852,7 +852,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (italic (,@fmt-ital ,@fg-base1))
                 (bold (,@fmt-bold ,@fg-base2))
                 (org-agenda-date (,@fg-blue))
-                (org-agenda-date-today (,@fmt-bldi ,@fg-blue))
+                (org-agenda-date-today (,@fmt-bldi ,@fg-orange))
                 (org-block-begin-line (,@fg-base01))
                 (org-block-end-line (,@fg-base01))
 
