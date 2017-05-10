@@ -951,8 +951,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 ;; highlight-thing
                 (highlight-thing (,@fg-magenta))
 
-                ;; ;; which-key
-                ;; (which-key-highlighted-command-face (,@fg-blue ,@bg-base02))
+                ;; edebug-x
+                (hi-edebug-x-stop (,@bg-base02 ,@fg-cyan))
+                (hi-edebug-x-debug-line (,@bg-base02 ,@fg-base1))
 
                 (fic-face (:inherit font-lock-comment-face ,@fg-base2 ,@bg-base02))
                 (fic-author-face (:inherit fic-face)))))))
