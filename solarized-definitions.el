@@ -944,6 +944,21 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (ediff-odd-diff-B (,@bg-base01 ,@fg-base03))
                 (ediff-even-diff-C (,@bg-base01 ,@fg-base0))
                 (ediff-odd-diff-C (,@bg-base01 ,@fg-base03))
+
+                ;; mu4e
+                (mu4e-header-face (,@fg-base01 :weight normal
+                                               :box (:line-width 1 :color base03
+                :style nil)))
+                (mu4e-unread-face (:inherit mu4e-header-face
+                                            ,@fg-base1
+                                            ,@bg-base02
+                                            ,@fmt-bold
+                                            ))
+                (mu4e-replied-face (:inherit mu4e-header-face))
+                (mu4e-flagged-face (:inherit mu4e-header-face))
+                (mu4e-draft-face (:inherit mu4e-header-face ,@fg-cyan))
+                (mu4e-header-highlight-face
+                 (:inherit mu4e-header-face ,@fg-base03 ,@bg-cyan))
                 
                 ;; help-fns+
                 (describe-variable-value (,@fg-cyan))
