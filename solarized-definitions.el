@@ -389,7 +389,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (org-archived (,@fg-base01))
                 (org-link (,@fmt-undr ,@fg-violet))
                 (org-footnote (,@fmt-undr ,@fg-violet))
-                (org-ellipses (,@fg-yellow :strike-through t) )
+                (org-ellipsis (,@fg-base01))
                 (org-target (,@fmt-undr))
                 (org-date (,@fmt-undr ,@fg-blue))
                 (org-date-selected (,@fmt-revr ,@fg-red))
