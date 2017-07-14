@@ -362,16 +362,17 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 ;; org
                 (org-block-background (,@bg-base03))
                 (org-hide (,@fg-base03))
-                (org-todo (,@fmt-bold ,@fg-orange ,@bg-base02))
-                (org-done (,@fmt-bold ,@fg-green ,@bg-base02))
-                (org-todo-kwd-face (,@fmt-bold ,@fg-base03 ,@bg-red))
-                (org-done-kwd-face (,@fmt-bold ,@fg-green))
-                (org-project-kwd-face (,@fg-violet ,@bg-base03))
-                (org-waiting-kwd-face (,@fg-orange ,@bg-base03))
-                (org-someday-kwd-face (,@fg-blue ,@bg-base03))
-                (org-started-kwd-face (,@fg-yellow ,@bg-base03))
-                (org-cancelled-kwd-face (,@fg-green ,@bg-base03))
-                (org-delegated-kwd-face (,@fg-cyan ,@bg-base03))
+                (org-todo (,@fmt-bold ,@fg-orange ,@bg-base02 :family "Courier New"))
+                (org-done (,@fmt-bold ,@fg-green ,@bg-base02 :family "Courier New"))
+                (org-todo-kwd-face (,@fmt-bold ,@fg-base03 ,@bg-red :family "Courier New"))
+                (org-done-kwd-face (,@fmt-bold ,@fg-green :family "Courier New"))
+                (org-project-kwd-face (,@fg-violet ,@bg-base03 :family "Courier New"))
+                (org-waiting-kwd-face (,@fg-orange ,@bg-base03 :family "Courier New"))
+                (org-someday-kwd-face (,@fg-blue ,@bg-base03 :family "Courier New"))
+                (org-started-kwd-face (,@fg-yellow ,@bg-base03 :family "Courier New"))
+                (org-cancelled-kwd-face (,@fg-green ,@bg-base03 :family "Courier
+          New"))
+                (org-delegated-kwd-face (,@fg-cyan ,@bg-base03 :family "Courier New"))
                 (org-default (:inherit default))
                 (org-level-1 (:inherit outline-1))
                 (org-level-2 (:inherit outline-2))
@@ -381,7 +382,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (org-level-6 (:inherit outline-6))
                 (org-level-7 (:inherit outline-7))
                 (org-level-8 (:inherit outline-8))
-                (org-special-keyword (,@fg-green ,@bg-base02))
+                (org-special-keyword (,@fg-green ,@bg-base02 :family "Courier New"))
                 (org-drawer (,@fmt-bold ,@fg-blue))
                 (org-column (,@fmt-revr ,@fg-cyan))
                 (org-column-title (,@fmt-bold ,@fmt-revr))
@@ -394,19 +395,19 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (org-date (,@fmt-undr ,@fg-blue))
                 (org-date-selected (,@fmt-revr ,@fg-red))
                 (org-sexp-date (,@fmt-undr ,@fg-cyan))
-                (org-tag (,@fmt-bold ,@fg-yellow ,@bg-base02))
+                (org-tag (,@fg-yellow ,@bg-base02 :family "Courier New"))
                 (org-list-dt (,@fg-green))
                 (org-agenda-done (,@fg-green))
                 (org-headline-done (,@fg-base01))
-                (org-priority (,@fmt-ital ,@fg-base01))
+                (org-priority (,@fmt-ital ,@fg-base01 :family "Courier New"))
                 (org-checkbox (,@fmt-bold ,@fg-yellow))
                 (org-table (,@fg-base01))
                 (org-formula (:weight bold :slant italic ,@fg-red))
-                (org-code (,@fg-green))
+                (org-code (,@fg-green :family "Courier New"))
                 (org-document-title (,@fmt-bold ,@fg-cyan))
                 (org-document-info-keyword (,@fg-base01))
                 (org-block (,@fg-base01))
-                (org-verbatim (,@fg-cyan))
+                (org-verbatim (,@fg-cyan :family "Courier New"))
                 (org-clock-overlay (,@bg-base2))
                 (org-agenda-structure (,@fg-violet))
                 (org-scheduled (,@fg-cyan))
@@ -421,13 +422,13 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (table-cell (,@fmt-none ,@fg-base0 ,@bg-back))
                 ;; outline - pandocBlockQuoteLeader[1–6]
                 (outline-1 (,@fg-blue))
-                (outline-2 (,@fg-yellow))
-                (outline-3 (,@fg-violet))
-                (outline-4 (,@fg-cyan))
-                (outline-5 (,@fg-blue))
-                (outline-6 (,@fg-yellow))
-                (outline-7 (,@fg-violet))
-                (outline-8 (,@fg-cyan))
+                (outline-2 (,@fg-cyan))
+                (outline-3 (,@fg-green))
+                (outline-4 (,@fg-yellow))
+                (outline-5 (,@fg-orange))
+                (outline-6 (,@fg-red))
+                (outline-7 (,@fg-magenta))
+                (outline-8 (,@fg-violet))
                 ;; show-paren - MatchParen
                 (show-paren-match (,@fg-magenta :underline t))
                 (show-paren-mismatch (,@fmt-bold ,@bg-magenta ,@fg-base03 :underline t :slant italic))
@@ -1000,24 +1001,43 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
   (list
 
    '(org-priority-faces 
-     `((?A . (:foreground ,(solarized-get-definition 'red) :background ,(solarized-get-definition 'base02)))
-       (?B . (:foreground ,(solarized-get-definition 'base01) :background ,(solarized-get-definition 'base02)))))
+     `((?A . (:foreground ,(solarized-get-definition 'red)
+              :background ,(solarized-get-definition 'base02)
+              :family "Courier New"
+                          ))
+       (?B . (:foreground ,(solarized-get-definition 'base01)
+              :background ,(solarized-get-definition 'base02)
+              :family "Courier New"))))
 
      '(org-todo-keyword-faces
-       `(("NOW" . (:foreground ,(solarized-get-definition 'orange)
-                               :background ,(solarized-get-definition 'base02)))
-         ("BLOCKED" . (:foreground ,(solarized-get-definition 'magenta)
-                                   :background ,(solarized-get-definition 'base02)))
-         ("HOLD" . (:foreground ,(solarized-get-definition 'base01)
-                                :background ,(solarized-get-definition 'base02)))
-         ("DONE" . (:foreground ,(solarized-get-definition 'base01)
-                                :background ,(solarized-get-definition 'base02)))
-         ("DROPPED" . (:foreground ,(solarized-get-definition 'base01)
-                                   :background ,(solarized-get-definition 'base02)))
-         ("A_OPEN" . (:foreground ,(solarized-get-definition 'blue)
-                                  :background ,(solarized-get-definition 'base02)))
-         ("A_CLOSED" . (:foreground ,(solarized-get-definition 'base01)
-                                    :background ,(solarized-get-definition 'base02)))))
+       `(("NOW" .
+          (:foreground ,(solarized-get-definition 'orange)
+           :family "Courier New"
+           :background ,(solarized-get-definition 'base02)))
+         ("BLOCKED" .
+          (:foreground ,(solarized-get-definition 'magenta)
+           :family "Courier New"
+           :background ,(solarized-get-definition 'base02)))
+         ("HOLD" .
+          (:foreground ,(solarized-get-definition 'base01)
+           :family "Courier New"
+           :background ,(solarized-get-definition 'base02)))
+         ("DONE" .
+          (:foreground ,(solarized-get-definition 'base01)
+           :family "Courier New"
+           :background ,(solarized-get-definition 'base02)))
+         ("DROPPED" .
+          (:foreground ,(solarized-get-definition 'base01)
+           :family "Courier New"
+           :background ,(solarized-get-definition 'base02)))
+         ("A_OPEN" .
+          (:foreground ,(solarized-get-definition 'blue)
+           :family "Courier New"
+           :background ,(solarized-get-definition 'base02)))
+         ("A_CLOSED" .
+          (:foreground ,(solarized-get-definition 'base01)
+           :family "Courier New"
+           :background ,(solarized-get-definition 'base02)))))
 
     '(fci-rule-color (solarized-get-definition 'base02))
 
