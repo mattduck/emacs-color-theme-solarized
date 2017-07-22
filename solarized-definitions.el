@@ -392,7 +392,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (org-footnote (,@fmt-undr ,@fg-violet))
                 (org-ellipsis (,@fg-base01))
                 (org-target (,@fmt-undr))
-                (org-date (,@fmt-undr ,@fg-blue))
+                (org-date (,@fmt-undr ,@fg-base01 :family "Courier New"))
                 (org-date-selected (,@fmt-revr ,@fg-red))
                 (org-sexp-date (,@fmt-undr ,@fg-cyan))
                 (org-tag (,@fg-yellow ,@bg-base02 :family "Courier New"))
