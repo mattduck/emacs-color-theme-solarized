@@ -898,6 +898,15 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (elscreen-tab-other-screen-face 
                   (:inherit elscreen-tab-background-face))
 
+                ;; neotree
+                (neo-dir-link-face (,@fg-blue))
+                (neo-banner-face (,@fg-cyan))
+                (neo-root-dir-face (,@fg-magenta ,@bg-base02))
+                (neo-file-link-face (,@fg-base1))
+                (neo-header-face (,@fg-base01))
+                (neo-button-face (,@fg-green))
+                (neo-expand-btn-face (,@fg-base01))
+
                 ;; powerline
                 (mode-line
                  (,@fg-base0 ,@bg-base03
