@@ -922,6 +922,11 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (md/powerline-replace (,@fg-base2 ,@bg-orange :inherit mode-line))
                 (md/powerline-emacs (,@fg-base2 ,@bg-magenta :inherit mode-line))
 
+                (eyebrowse-mode-line-active (,@fg-magenta ,@bg-base02))
+                (eyebrowse-mode-line-inactive (,@fg-base01 ,@bg-base02))
+                (eyebrowse-mode-line-delimiters (,@fg-base01 ,@bg-base02))
+                (eyebrowse-mode-line-separator (,@fg-base01 ,@bg-base02))
+
                 (mode-line-inactive
                  (,@fg-base02 ,@bg-base0
                               :inverse-video nil
@@ -940,6 +945,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (mode-line-buffer-id (,@fg-magenta))  ; Not sure what this does
 
                 (sh-quoted-exec (,@fg-orange))
+
 
                 ;; ediff
                 (ediff-current-diff-A (,@bg-base02 ,@fg-orange :weight bold))
