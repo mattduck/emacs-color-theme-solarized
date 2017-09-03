@@ -430,8 +430,11 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (outline-7 (,@fg-magenta))
                 (outline-8 (,@fg-violet))
                 ;; show-paren - MatchParen
-                (show-paren-match (,@fg-magenta :underline t))
-                (show-paren-mismatch (,@fmt-bold ,@bg-magenta ,@fg-base03 :underline t :slant italic))
+                ;;(show-paren-match (,@fg-magenta :underline t))
+                ;; (show-paren-match (:underline t :bold t))
+                (show-paren-match (,@fg-base3))
+                ;; (show-paren-mismatch (,@fmt-bold ,@bg-magenta ,@fg-base03 :underline t :slant italic))
+                (show-paren-mismatch (,@bg-red))
                 ;; speedbar
                 ;; (speedbar-button-face (,@fmt-none ,@fg-base1))
                 (speedbar-button-face
@@ -987,7 +990,12 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (hi-edebug-x-debug-line (,@bg-base02 ,@fg-base1))
 
                 (fic-face (:inherit font-lock-comment-face ,@fg-base2 ,@bg-base02))
-                (fic-author-face (:inherit fic-face)))))))
+                (fic-author-face (:inherit fic-face))
+
+                ;; Matt - personal
+                (md/helm-bookmarks-bookmark (,@fg-green))
+                (md/helm-bookmarks-file (,@fg-base00))
+                )))))
 
 
 (defun solarized-get-definition (color-name)
