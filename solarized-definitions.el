@@ -992,6 +992,11 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (fic-face (:inherit font-lock-comment-face ,@fg-base2 ,@bg-base02))
                 (fic-author-face (:inherit fic-face))
 
+                ;; Origami
+                (origami-fold-header-face (,@bg-base02))
+                (origami-fold-fringe-face (,@bg-base02 ,@fg-orange))
+                (origami-fold-replacement-face (,@fg-base01 :family "Courier New"))
+
                 ;; Matt - personal
                 (md/helm-bookmarks-bookmark (,@fg-green))
                 (md/helm-bookmarks-file (,@fg-base00))
